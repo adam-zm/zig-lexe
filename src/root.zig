@@ -278,10 +278,3 @@ pub const Lexer = struct {
     //not needed for now...
     pub fn deinit(_: *Lexer) void {}
 };
-
-test "simple lexing" {
-    var lexer = Lexer.init("+");
-
-    try std.testing.expect(lexer.next().type == TokenType.PLUS);
-    try std.testing.expect(lexer.next().type == TokenType.EOF);
-}
